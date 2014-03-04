@@ -12,6 +12,6 @@ namespace HelloAspAngular.App
         Task<Todo> AddTodoAsync(int todoListId, Todo todo);
         Task UpdateTodoAsync(int todoListId, Todo todo);
         Task ArchiveAsync(int todoListId);
-        Task ClearArchivedTodosAsync();
+        Task ClearTodosAsync(int todoListId);
     }
 }

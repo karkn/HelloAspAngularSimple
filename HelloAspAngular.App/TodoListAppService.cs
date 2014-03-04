@@ -40,7 +40,6 @@ namespace HelloAspAngular.App
         public async Task UpdateTodoAsync(int todoListId, Todo todo)
         {
             _todoListRepository.UpdateTodo(todo);
-
             await _unitOfWork.SaveAsync();
         }
 
@@ -51,9 +50,12 @@ namespace HelloAspAngular.App
             await _unitOfWork.SaveAsync();
         }
 
-        public async Task ClearArchivedTodosAsync()
+        public async Task ClearTodosAsync(int todoListId)
         {
-            await _todoListService.ClearArchivedTodosAsync();
+            var storedList = await _todoListRepository.FindAsync(l => l.Id == todoListId, new[] { "Todos" });
+            var todos = storedList.Todos.ToArray();
+            storedList.Todos.Clear();
+            _todoListRepository.RemoveTodos(todos);
             await _unitOfWork.SaveAsync();
         }
     }

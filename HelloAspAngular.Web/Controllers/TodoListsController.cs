@@ -59,16 +59,10 @@ namespace HelloAspAngular.Web.Controllers
         [Route("api/todolists/{id}/todos/{todoId}")]
         public async Task<IHttpActionResult> PutTodo(int id, int todoId, TodoResourceModel input)
         {
-            try
-            {
-                var todo = Mapper.Map<Todo>(input);
-                todo.Id = todoId;
-                await _todoListAppService.UpdateTodoAsync(id, todo);
-                return Ok(string.Empty);
-            } catch (Exception e)
-            {
-                throw e;
-            }
+            var todo = Mapper.Map<Todo>(input);
+            todo.Id = todoId;
+            await _todoListAppService.UpdateTodoAsync(id, todo);
+            return Ok(string.Empty);
         }
 
         // GET api/todolists/archived
@@ -84,7 +78,7 @@ namespace HelloAspAngular.Web.Controllers
         [Route("api/todolists/{id}/clear")]
         public async Task<IHttpActionResult> DeleteTodos(int id)
         {
-            await _todoListAppService.ClearArchivedTodosAsync();
+            await _todoListAppService.ClearTodosAsync(id);
             return Ok(string.Empty);
         }
 
