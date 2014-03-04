@@ -1,0 +1,8 @@
+﻿<ul class="nav nav-tabs">
+    <li ng-repeat="list in todoLists" ng-class="{active: isActive(list.Id)}">
+        <a href="" ng-click="activate(list.Id)">{{list.Name}}</a>
+    </li>
+    <li ng-class="{active: isActive('archived')}">
+        <a href="" ng-click="activate('archived')">Archived</a>
+    </li>
+</ul>

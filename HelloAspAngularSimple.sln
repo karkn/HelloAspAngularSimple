@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloAspAngular.Web", "HelloAspAngular.Web\HelloAspAngular.Web.csproj", "{65EAEC45-1D4C-4FBB-8563-8BD63456C6AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9A3D5135-93D5-4423-AF25-DFD35A7AF66E}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloAspAngular.App", "HelloAspAngular.App\HelloAspAngular.App.csproj", "{DF8C0023-22EC-4EC2-86BB-45022FF528C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloAspAngular.Domain", "HelloAspAngular.Domain\HelloAspAngular.Domain.csproj", "{9A926D6F-79BA-4CA9-8673-1D5AA241AFB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloAspAngular.Infra", "HelloAspAngular.Infra\HelloAspAngular.Infra.csproj", "{AE426CAC-1E68-4081-A69C-25D5983C17A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloAspAngular.Common", "HelloAspAngular.Common\HelloAspAngular.Common.csproj", "{0FEB2D89-0A1A-4A5D-9595-17FE3F603F67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65EAEC45-1D4C-4FBB-8563-8BD63456C6AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65EAEC45-1D4C-4FBB-8563-8BD63456C6AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65EAEC45-1D4C-4FBB-8563-8BD63456C6AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65EAEC45-1D4C-4FBB-8563-8BD63456C6AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF8C0023-22EC-4EC2-86BB-45022FF528C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF8C0023-22EC-4EC2-86BB-45022FF528C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF8C0023-22EC-4EC2-86BB-45022FF528C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF8C0023-22EC-4EC2-86BB-45022FF528C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A926D6F-79BA-4CA9-8673-1D5AA241AFB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A926D6F-79BA-4CA9-8673-1D5AA241AFB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A926D6F-79BA-4CA9-8673-1D5AA241AFB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A926D6F-79BA-4CA9-8673-1D5AA241AFB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE426CAC-1E68-4081-A69C-25D5983C17A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE426CAC-1E68-4081-A69C-25D5983C17A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE426CAC-1E68-4081-A69C-25D5983C17A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE426CAC-1E68-4081-A69C-25D5983C17A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FEB2D89-0A1A-4A5D-9595-17FE3F603F67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FEB2D89-0A1A-4A5D-9595-17FE3F603F67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FEB2D89-0A1A-4A5D-9595-17FE3F603F67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FEB2D89-0A1A-4A5D-9595-17FE3F603F67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45
+	EndGlobalSection
+EndGlobal

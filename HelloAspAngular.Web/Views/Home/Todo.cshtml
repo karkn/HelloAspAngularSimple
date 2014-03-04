@@ -1,0 +1,18 @@
+﻿<h1 class="page-header">Todo</h1>
+
+<div>
+    <p ng-show="todoLists === null">Loading data...</p>
+
+    <div ng-show="todoLists !== null">
+        @Html.Partial("Todo/_TodoListTabs")
+
+        <div ng-controller="TodoListCtrl" ng-if="!isActive('archived')">
+            @Html.Partial("Todo/_TodoList")
+            @Html.Partial("Todo/_AddTodoForm")
+        </div>
+
+        <div ng-controller="ArchivedTodoListCtrl" ng-if="isActive('archived')">
+            @Html.Partial("Todo/_ArchivedTodoList")
+        </div>
+    </div>
+</div>

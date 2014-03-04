@@ -1,0 +1,11 @@
+﻿<span>{{remaining()}} of {{activeTodoList.Todos.length}} remaining</span>
+[ <a href="" ng-click="archive()">archive</a> ]
+
+<ul class="list-unstyled">
+    <li ng-repeat="todo in activeTodoList.Todos" class="checkbox">
+        <label>
+            <input type="checkbox" ng-model="todo.IsDone" ng-change="updateTodo(todo)">
+            <span class="done-{{todo.IsDone}}">{{todo.Text}}</span>
+        </label>
+    </li>
+</ul>

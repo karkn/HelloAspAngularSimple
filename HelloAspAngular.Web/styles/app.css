@@ -1,0 +1,15 @@
+﻿body {
+    font-family: "Meiryo UI", Meiryo, sans-serif;
+    overflow-y: scroll;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.done-true {
+    text-decoration: line-through;
+    color: grey;
+}
+
+.nav-tabs {
+    margin-bottom: 20px;
+}
