@@ -32,7 +32,7 @@
         }
 
         function validateTodo(todo) {
-            return todo.Text !== null || todo.Text.length > 0;
+            return todo.Text !== null && todo.Text.length > 0;
         }
 
         function isArchivedTodoList(todoList) {

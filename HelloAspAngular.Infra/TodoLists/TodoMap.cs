@@ -15,8 +15,6 @@ namespace HelloAspAngular.Infra.TodoLists
             this.ToTable("Todos");
 
             this.HasKey(t => t.Id);
-
-            this.Property(t => t.Text).IsRequired();
         }
     }
 }
