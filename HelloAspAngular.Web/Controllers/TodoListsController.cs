@@ -27,10 +27,10 @@ namespace HelloAspAngular.Web.Controllers
         }
 
         // GET api/todolists
-        public async Task<IEnumerable<TodoListResourceModel>> Get()
+        public async Task<IHttpActionResult> Get()
         {
             var lists = await _todoListRepository.FindAllAsync(l => l.Kind == TodoListKind.Normal);
-            return Mapper.Map<IEnumerable<TodoListResourceModel>>(lists);  // todo: use Ok()
+            return Ok(Mapper.Map<IEnumerable<TodoListResourceModel>>(lists));
         }
 
         // GET api/todolists/{id}
