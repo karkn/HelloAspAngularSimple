@@ -3,7 +3,7 @@
 
     var mod = angular.module('todoServices', []);
 
-    mod.factory("todoService", [TodoService]);
+    mod.factory('todoService', [TodoService]);
 
     function TodoService() {
         return {
