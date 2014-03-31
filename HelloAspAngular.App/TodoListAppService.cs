@@ -24,38 +24,53 @@ namespace HelloAspAngular.App
 
         public async Task<Todo> AddTodoAsync(int todoListId, Todo todo)
         {
-            var list = new TodoList()
+            using (var tran = _unitOfWork.BeginTransaction())
             {
-                Id = todoListId,
-            };
+                var list = new TodoList()
+                {
+                    Id = todoListId,
+                };
 
-            _todoListRepository.Attach(list);
-            list.Todos.Add(todo);
+                _todoListRepository.Attach(list);
+                list.Todos.Add(todo);
 
-            await _unitOfWork.SaveAsync();
-
-            return todo;
+                await _unitOfWork.SaveAsync();
+                tran.Commit();
+                return todo;
+            }
         }
 
         public async Task UpdateTodoAsync(int todoListId, Todo todo)
         {
-            var storedList = await _todoListRepository.FindAsync(l => l.Id == todoListId, new[] { "Todos" });
-            storedList.ChangeTodo(todo);
-            await _unitOfWork.SaveAsync();
+            using (var tran = _unitOfWork.BeginTransaction())
+            {
+                var storedList = await _todoListRepository.FindAsync(l => l.Id == todoListId, new[] { "Todos" });
+                storedList.ChangeTodo(todo);
+                await _unitOfWork.SaveAsync();
+                tran.Commit();
+            }
         }
 
         public async Task ArchiveAsync(int todoListId)
         {
-            var storedList = await _todoListRepository.FindAsync(l => l.Id == todoListId, new[] { "Todos" });
-            await _todoListService.ArchiveAsync(storedList);
-            await _unitOfWork.SaveAsync();
+            using (var tran = _unitOfWork.BeginTransaction())
+            {
+                var storedList = await _todoListRepository.FindAsync(l => l.Id == todoListId, new[] { "Todos" });
+                await _todoListService.ArchiveAsync(storedList);
+                await _unitOfWork.SaveAsync();
+                tran.Commit();
+            }
         }
 
         public async Task ClearTodosAsync(int todoListId)
         {
-            var storedList = await _todoListRepository.FindAsync(l => l.Id == todoListId, new[] { "Todos" });
-            await _todoListService.ClearTodosAsync(storedList);
-            await _unitOfWork.SaveAsync();
+            using (var tran = _unitOfWork.BeginTransaction())
+            {
+                var storedList = await _todoListRepository.FindAsync(l => l.Id == todoListId, new[] { "Todos" });
+                await _todoListService.ClearTodosAsync(storedList);
+                await _unitOfWork.SaveAsync();
+                tran.Commit();
+            }
         }
     }
 }

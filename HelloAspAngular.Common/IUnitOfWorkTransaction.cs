@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HelloAspAngular.Common
 {
-    public interface IUnitOfWorkTransaction
+    public interface IUnitOfWorkTransaction: IDisposable
     {
         void Commit();
         void Rollback();
