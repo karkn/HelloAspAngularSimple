@@ -54,9 +54,7 @@ namespace HelloAspAngular.App
         public async Task ClearTodosAsync(int todoListId)
         {
             var storedList = await _todoListRepository.FindAsync(l => l.Id == todoListId, new[] { "Todos" });
-            var todos = storedList.Todos.ToArray();
-            storedList.Todos.Clear();
-            _todoListRepository.RemoveTodos(todos);
+            await _todoListService.ClearTodosAsync(storedList);
             await _unitOfWork.SaveAsync();
         }
     }

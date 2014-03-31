@@ -25,5 +25,13 @@ namespace HelloAspAngular.Domain.TodoLists
                 todo.TodoList = archivedTodoList;
             }
         }
+
+        public Task ClearTodosAsync(TodoList todoList)
+        {
+            var todos = todoList.Todos.ToArray();
+            todoList.Todos.Clear();
+            _todoListRepository.RemoveTodos(todos);
+            return Task.FromResult(0);
+        }
     }
 }
