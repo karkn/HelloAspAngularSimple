@@ -39,7 +39,8 @@ namespace HelloAspAngular.App
 
         public async Task UpdateTodoAsync(int todoListId, Todo todo)
         {
-            _todoListRepository.UpdateTodo(todo);
+            var storedList = await _todoListRepository.FindAsync(l => l.Id == todoListId, new[] { "Todos" });
+            storedList.ChangeTodo(todo);
             await _unitOfWork.SaveAsync();
         }
 

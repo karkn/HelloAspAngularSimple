@@ -24,6 +24,13 @@ namespace HelloAspAngular.Domain.TodoLists
         {
             return Todos.Where(t => t.IsDone).ToArray();
         }
+
+        public void ChangeTodo(Todo todo)
+        {
+            var storedTodo = Todos.FirstOrDefault(t => t.Id == todo.Id);
+            storedTodo.IsDone = todo.IsDone;
+            storedTodo.Text = todo.Text;
+        }
     }
 
     public enum TodoListKind: byte

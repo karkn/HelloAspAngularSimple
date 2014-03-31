@@ -14,14 +14,6 @@ namespace HelloAspAngular.Infra.TodoLists
         {
         }
 
-        public void UpdateTodo(Todo todo)
-        {
-            Context.Todos.Attach(todo);
-            var entry = Context.Entry(todo);
-            entry.Property(t => t.IsDone).IsModified = true;
-            entry.Property(t => t.Text).IsModified = true;
-        }
-
         public void RemoveTodos(IEnumerable<Todo> todos)
         {
             Context.Todos.RemoveRange(todos);
