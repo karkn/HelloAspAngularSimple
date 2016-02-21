@@ -1,7 +1,11 @@
 HelloAspAngularSimple
-===============
+=====================
 
-HelloAspAngular is a simple todo web application. 
+HelloAspAngular is a simple todo web application.
+
+## Requirements
+
+* Visual Studio Community 2015
 
 ## Technologies
 
@@ -15,6 +19,8 @@ HelloAspAngular is a simple todo web application.
 
 ## How to run
 
-1. Open and build the solution in Visual Studio 2013. NuGet packages will be automatically restored.
+0. Install Visual Studio Community 2015.
+   - To install SQL Server LocalDB, check on [Windows and Web Development]>[Microsoft SQL Server Data Tools].
+1. Open and build the solution in Visual Studio. Necessary NuGet packages will be automatically downloaded.
 2. Set HelloAspAngular.Web project as StartUp project.
 3. Run the application.
