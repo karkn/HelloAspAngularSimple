@@ -14,11 +14,6 @@ namespace HelloAspAngular.Infra
         // EntityFramework.SqlServer.dllがbinにコピーされるようにする。
         private static Type _dummyForDllCopy = typeof(System.Data.Entity.SqlServer.SqlProviderServices);
 
-        static AppContext()
-        {
-            Database.SetInitializer(new AppDbInitializer());
-        }
-
         public DbSet<TodoList> TodoLists { get; set; }
         public DbSet<Todo> Todos { get; set; }
 
