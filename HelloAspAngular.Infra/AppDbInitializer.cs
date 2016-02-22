@@ -10,6 +10,12 @@ namespace HelloAspAngular.Infra
 {
     public class AppDbInitializer : DropCreateDatabaseIfModelChanges<AppContext>
     {
+
+        public static void Init()
+        {
+            Database.SetInitializer(new AppDbInitializer());
+        }
+
         protected override void Seed(AppContext context)
         {
             {

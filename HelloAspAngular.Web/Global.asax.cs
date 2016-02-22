@@ -8,6 +8,7 @@ using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
 using System.Web.Optimization;
+using HelloAspAngular.Infra;
 
 namespace HelloAspAngular.Web
 {
@@ -21,7 +22,7 @@ namespace HelloAspAngular.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AutoMapConfig.RegisterMaps();
 
-            
+            AppDbInitializer.Init();
         }
     }
 }
